@@ -9,10 +9,6 @@ package tw.edu.nccu.soslab.gnafuy.api.utils;
 public abstract class Interaction<T> {
     protected final T value;
     protected final String valueAsString;
-    /**
-     * queue: to indicate this interaction should go after processing, optional.
-     */
-    protected String queue = null;
 
     public Interaction(T value) {
         this.value = value;
@@ -38,17 +34,11 @@ public abstract class Interaction<T> {
      */
     abstract protected String getStringFromValue(T from);
 
-    public abstract String getKey();
-
     public T getCopyOfValue() {
         return getValueFromString(valueAsString);
     }
 
     public String getValueAsString() {
         return valueAsString;
-    }
-
-    public String getQueue() {
-        return queue;
     }
 }
