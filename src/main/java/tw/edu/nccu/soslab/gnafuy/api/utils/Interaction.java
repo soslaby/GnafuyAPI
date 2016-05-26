@@ -10,6 +10,11 @@ public abstract class Interaction<T> {
     protected final T value;
     protected final String valueAsString;
 
+    /**
+     * to specify where the element should go
+     */
+    protected String toQueue;
+
     public Interaction(T value) {
         this.value = value;
         this.valueAsString = getStringFromValue(value);
@@ -22,6 +27,7 @@ public abstract class Interaction<T> {
 
     /**
      * Convert specific string to corresponding instance with type T
+     *
      * @param from
      * @return instance of type T
      */
@@ -29,6 +35,7 @@ public abstract class Interaction<T> {
 
     /**
      * Convert instance with type T to specific string
+     *
      * @param from
      * @return specific string
      */
@@ -40,5 +47,9 @@ public abstract class Interaction<T> {
 
     public String getValueAsString() {
         return valueAsString;
+    }
+
+    public String getToQueue() {
+        return toQueue;
     }
 }
