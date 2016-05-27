@@ -6,14 +6,14 @@ import com.google.gson.Gson;
  * Created by jjchen on 2016/5/26.
  */
 public abstract class GnafuyMessageWithState {
-    private int nextStateCode;
+    protected int nextStateCode;
 
     public int getNextStateCode() {
-        return nextStateCode;
+        return this.getNextState().getStatusCode();
     }
 
     public void setNextStateCode(int nextStateCode) {
-        this.nextStateCode = nextStateCode;
+        this.nextStateCode = this.getNextState().getStatusCode();
     }
 
     public abstract GnafuyClientState getNextState();

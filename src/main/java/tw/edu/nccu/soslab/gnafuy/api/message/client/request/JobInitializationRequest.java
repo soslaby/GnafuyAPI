@@ -29,4 +29,9 @@ public class JobInitializationRequest extends GnafuyMessageWithState {
     public void setJobInformation(JobInformation jobInformation) {
         this.jobInformation = jobInformation;
     }
+
+    @Override
+    public String toString() {
+        return this.toJson();
+    }
 }
