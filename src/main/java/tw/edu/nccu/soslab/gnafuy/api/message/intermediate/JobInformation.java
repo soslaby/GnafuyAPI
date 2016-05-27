@@ -1,5 +1,6 @@
 package tw.edu.nccu.soslab.gnafuy.api.message.intermediate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ public class JobInformation {
     private String jobName;
     private String libraryBase64;
     private QueueMeta initialQueue;
-    private List<Task> tasks;
+    private List<Task> tasks = new ArrayList<>();
 
     public String getJobName() {
         return jobName;
