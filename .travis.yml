@@ -1,8 +1,13 @@
 language: java
 script:
-  - mvn test
+- mvn test
 after_success:
-  - mvn package
-  - git add -f target/gnafuy-api.jar
-  - git commit -m "[ci skip] gnafuy-api.jar auto package"
-  - git push origin development
+- mvn package
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- git add -f target/gnafuy-api.jar
+- git commit -m "[ci skip] gnafuy-api.jar auto package"
+- git push origin development
+env:
+  global:
+    secure: BUvtxRC3mgrljEP0gE2lE5zeMSLMYRcpzkvHI6xSgQHYI935bxjd/oQvvt1iFTJrS9bcG/HZQme42SpZi9tnGNYrHFTIWVEUTO8GymFAYwhq5xpxHUe46Edt//YA08Jy4JvCkcgoAs7Gsb5tNf2GTp23Z43ZbeJIudt3WosMtDMG6I6MxY/FOwgmbkJyBKMis75QSKGGfqhUKBzaWFiKj8CJvvOKwR4KkQr/UKJ5Jw9bS+Mvf4Otv2o1fF1myJRWuzVYa3K2a7C3rpNtb9OXtY7kg1m7twZJUrYxqEaxcDFk9SALJ374HKijEQWzrVEOzulcZ+88fcDDLOYu3d5DizLYoHyhTdyoDNpTVseIPYqxz8g8wfFIMSfH45I2zz3HzFMYEnEqtqn3lWAxtoWQKA2UETm1YREfTP36inLEfXSTbmPJGCfXJ66sswVYgvKey8s2Dbrr7rTLRBn85fuQkDNn0V4D+Gi6ktZkByGTPI0xxT3TIghpocxdXW+fQysZPamD6JErZAVRV+ewQGLoZ0AkILfoeSritE3z/htbJUxk6r83ylV6PWSEMQ4rLtlVpAncrELPvBYte3lmN4kf9DIEmY143ieETOvLzKEY78eNJwQOugIoXO052t69vvPCb5gbW6EcnsPyO3IVxf28k2cjiwNxAIymtuHSa0tSulc=
