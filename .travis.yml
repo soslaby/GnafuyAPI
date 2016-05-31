@@ -3,4 +3,6 @@ script:
   - mvn test
 after_success:
   - mvn package
-  - git status
+  - git add -f target/gnafuy-api.jar
+  - git commit -m "[ci skip] gnafuy-api.jar auto package"
+  - git push origin development
