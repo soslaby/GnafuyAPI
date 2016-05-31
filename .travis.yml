@@ -3,6 +3,8 @@ script:
 - mvn test
 after_success:
 - mvn package
+- git config --global user.email tars90pct@gmail.com
+- git config --global user.name tars90pct
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git add -f target/gnafuy-api.jar
