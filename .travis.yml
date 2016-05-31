@@ -2,11 +2,14 @@ language: java
 script:
 - mvn test
 after_success:
-- mvn package
 - git config --global user.email tars90pct@gmail.com
 - git config --global user.name tars90pct
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- pwd
+- cd GnafuyAPI
+- git checkout development
+- mvn package
 - git add -f target/gnafuy-api.jar
 - git commit -m "[ci skip] gnafuy-api.jar auto package"
 - git push origin development
