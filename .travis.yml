@@ -2,12 +2,10 @@ language: java
 script:
 - mvn test
 after_success:
-- git config --global user.email tars90pct@gmail.com
-- git config --global user.name tars90pct
+- git config --global user.email nccusoslab@gmail.com
+- git config --global user.name soslaby
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- pwd
-- cd GnafuyAPI
 - git checkout development
 - mvn package
 - git add -f target/gnafuy-api.jar
@@ -15,4 +13,4 @@ after_success:
 - git push origin development
 env:
   global:
-    secure: "kdE76ffi/JuvWdg02ZF9zue6+srtyL1M/9dgY1yTYAmI+YfDQAKh8R0lFewt99YC4SoGV9WQQYfieNKlcgXKTjtsFeFehSiqW/0PSzyN/dnbkRdmqTQ3Slm7WGNRQb8BR2iXfGFuoNRStX18hWaDVmvLPwc+qXARYFb5Tfcyn5nD4xRFQ56I5pomJqrCk0y3wvEDx6U6kEV181JIDQlrsTMfAUZzl+CCFxQw9/DETbQzRdQb1WN8w6IwwbJxfBiCEIGLB8Z997eB3qW4NlW8FHKjNxk2AXvlzEFJIsVPQpme3Em/mLhhVBQDwFqaksND6AfX90DUAr/J7SwipuSN7bUkYJlyYkqnwQiaRwOcWG1WHnWDEbaGQ35OWimsruvfUyQ0Q2dX3mzxNG8il/1AfWAbo1wyqgGusKqhPki+OdaYIhhmi71PHpEiHh8w41Gzq/0epFos5JJRly1PCU2sVjrBoPbRfi/V1Jc5UHehfAOP5iy2I+6Ic/5OfTERjtrGujXFw3WtZH5FLGPBsQLCK0m0zZUVRALsKxhRImQQQXto/CRUhXkyweRdHD03EI3/3JkKNDUl47K/4xwbiB59C58P+n8zxY6QwjmQMdWzKc2Zx94m3LVe4GccY7slqfTs6fTz7buDmrW8+VmATC4Vrz8tA03N0/bNuX0RUwWJQbA="
+    secure: "BJIsDggC19ljk61unQNvkvTY0jkDw+LCLYL/ykpoGhdqGspsVYHQp6HXEQgZf2Te7G1UNjMrnBNJUx2wDugcJkTmdU2oAnOGYLY9MrITze/0cDgZpgM3/uikK+C+UHB/eBapUErCjMexPcC3tDUt1V5hLWe5cDCbZeKMmu09wqigFJRdxSN84FL5vnFzeyKs/9DRMOsTQ7tMAE14PSehfmh0763JBRT5x5oPZUJ3EBK1VGeYFZCfSd3WhJjKvDA0BXczRwF1mwg746X8MXc4LMQbpwoNkc8vTE5UKLzkFqrnXpUV+uaHNLgffzPdrVKHgFZVZD1jWAWOw4NJUp9frEIOjImET2ETvfsB37Z5aLtS5CFQCHd2d2DqS9rqZ/f5LrT20hmJC4D6pRH48TxlFw+TLRhih36WIOF8Q88qAgCODLrgd8tGGaCDfgMCiEzTyWp4Od+3YmfqTgsASWa3XT7k+qNTGrBPevpcpVRuUB5i/kqs3bcwob9i3qKZXpX6j6dMNA5H6oZXeWYD3eH+Wyv0PBQ1IxwyioWB9SQrzsVfAo1MaLxYaSR7FHX6lBewLBB3S3OIkC9lgcO/I1GT94Nm7dThB0tHrqnNiAVoCbOvXRl02hG++ufEDAsxRARkjLg0mlGBNNozVp2Yszc7Wd3UjxRKihvzcUpgdsCQTNU="
