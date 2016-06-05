@@ -21,7 +21,7 @@ import java.net.URLConnection;
 import java.util.*;
 
 /**
- * Created by jjchen on 2016/5/27.
+ * Created by jjchen on 2016/5/27 .
  */
 public class JobBuilder {
     private JobInformation jobInformation = new JobInformation();
